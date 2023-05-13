@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class Bumping : MonoBehaviour
 {
-    public Rigidbody myRB;
     public NavMeshAgent myNavMesh;
     public float bounceForce;
 
@@ -16,10 +15,10 @@ public class Bumping : MonoBehaviour
         {
             if(myNavMesh != null)
             {
-                myNavMesh.enabled = false;
+                myNavMesh.speed = 0;
             }
 
-            myRB.AddExplosionForce(bounceForce * 20, collision.contacts[0].point, 1.0f);
+            collision.gameObject.GetComponent<Rigidbody>().AddExplosionForce(bounceForce * 20, collision.contacts[0].point, 1.0f);
         }
         
     }

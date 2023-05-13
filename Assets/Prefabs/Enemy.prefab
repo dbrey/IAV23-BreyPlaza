@@ -49,6 +49,7 @@ MonoBehaviour:
   dest: {fileID: 0}
   myRBObject: {fileID: 5240571575687041996}
   myNavMeshObject: {fileID: 8337824428595187440}
+  speed: 10
   bounceForce: 1000
   stunned: 2
 --- !u!1 &2198467713078832587
@@ -158,7 +159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15314ab6e6baa074a94e97a73bf9365a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRB: {fileID: 2886840596686870701}
   myNavMesh: {fileID: 8337824428595187453}
   bounceForce: 50
 --- !u!1 &8337824428595187440
@@ -205,7 +205,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 0
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -236,15 +236,15 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 9.090644
-      outSlope: 9.090644
+      inSlope: 12.331054
+      outSlope: 12.331054
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.054211035
+      outWeight: 0.023127524
     - serializedVersion: 3
       time: 0.5
-      value: 2
+      value: 2.5
       inSlope: 0
       outSlope: 0
       tangentMode: 34
@@ -254,11 +254,11 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -6.707425
-      outSlope: -6.707425
+      inSlope: -12.831711
+      outSlope: -12.831711
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.07163596
+      inWeight: 0.02364397
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

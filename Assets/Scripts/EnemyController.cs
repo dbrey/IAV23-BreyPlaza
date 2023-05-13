@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] Transform dest;
     [SerializeField] GameObject myRBObject;
     [SerializeField] GameObject myNavMeshObject;
+    [SerializeField] float speed;
 
     public float bounceForce;
     public float stunned;
@@ -19,6 +20,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        myNavMeshObject.gameObject.GetComponent<NavMeshAgent>().speed = speed;
         timer = stunned;
     }
 
@@ -26,7 +28,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
 
-        if (myNavMeshObject.GetComponent<NavMeshAgent>().enabled)
+        if (myNavMeshObject.GetComponent<NavMeshAgent>().speed >= speed)
         {
 
 
@@ -46,7 +48,7 @@ public class EnemyController : MonoBehaviour
            
             if (timer < 0.0f)
             {
-                myNavMeshObject.GetComponent<NavMeshAgent>().enabled = true;
+                myNavMeshObject.GetComponent<NavMeshAgent>().speed = speed;
                 timer = stunned;
             }
             else timer -= Time.deltaTime;
