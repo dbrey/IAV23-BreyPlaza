@@ -14,6 +14,12 @@ public class Spawn : MonoBehaviour
             collision.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         }
         else
-            Destroy(collision.gameObject.transform.parent.gameObject);
+        {
+            if(collision.gameObject.transform.parent != null)
+                Destroy(collision.gameObject.transform.parent.gameObject);
+            else
+                Destroy(collision.gameObject);
+
+        }
     }
 }
