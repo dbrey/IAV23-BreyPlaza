@@ -18,13 +18,17 @@ public class Bomb : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Character" || collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Character")
         {
-            if (collision.gameObject.GetComponent<NavMeshAgent>() != null)
-            {
-                collision.gameObject.GetComponent<NavMeshAgent>().speed = 0;
-            }
+            NavMeshAgent nvEnemy = collision.gameObject.transform.parent.Find("EnemyNavMesh").GetComponent<NavMeshAgent>();
+            nvEnemy.speed = 0;
+            
 
+            collision.gameObject.GetComponent<Rigidbody>().AddExplosionForce(bounceForce * 20, collision.contacts[0].point, 1.0f);
+            Destroy(this.gameObject);
+        }
+        else if(collision.gameObject.tag == "Player")
+        {
             collision.gameObject.GetComponent<Rigidbody>().AddExplosionForce(bounceForce * 20, collision.contacts[0].point, 1.0f);
             Destroy(this.gameObject);
         }
