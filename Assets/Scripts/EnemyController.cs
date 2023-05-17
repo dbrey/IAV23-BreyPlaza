@@ -5,33 +5,29 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-
+    [Header("Objects")]
     [SerializeField] Transform dest;
     [SerializeField] GameObject myRBObject;
     [SerializeField] GameObject myNavMeshObject;
-    [SerializeField] float speed;
 
-    public float bounceForce;
-    public float stunned;
+    [Header("Parameters")]
+    [SerializeField] float speed;
+    [SerializeField] float bounceForce;
+    [SerializeField] float stunned;
     private float timer;
 
 
-
-    // Start is called before the first frame update
     void Awake()
     {
         myNavMeshObject.gameObject.GetComponent<NavMeshAgent>().speed = speed;
         timer = stunned;
     }
 
-    // Update is called once per frame
     void Update()
     {
-
+        // Si el componente esta "activado"
         if (myNavMeshObject.GetComponent<NavMeshAgent>().speed >= speed)
         {
-
-
             // Posicionamos el rigidbody e impedimos que se gire.
             myRBObject.transform.position = myNavMeshObject.transform.position + new Vector3(0, 1.2f, 0);
             myRBObject.GetComponent<Rigidbody>().freezeRotation = true;
@@ -44,8 +40,8 @@ public class EnemyController : MonoBehaviour
             //Movemos el objeto navmesh y la malla donde se dirija el rigidbody
             myNavMeshObject.transform.position = myRBObject.transform.position - new Vector3(0, 1.2f, 0);
             myRBObject.GetComponent<Rigidbody>().freezeRotation = false;
-            //transform.position = myNavMeshObject.transform.position;
            
+            // Temporizador para "reactivar" el NavMeshAgent
             if (timer < 0.0f)
             {
                 myNavMeshObject.GetComponent<NavMeshAgent>().speed = speed;

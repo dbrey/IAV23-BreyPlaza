@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
+    [Header("Objects")]
     [SerializeField] GameObject bomb;
     [SerializeField] Transform shootPoint;
+
+    [Header("Parameters")]
     public float minShootForce;
     public float maxShootForce;
     public float timer;

@@ -18,6 +18,7 @@ public class Bomb : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        // Si choca con un personaje, accedemos a su NavMeshAgent y lo "desactivamos", añadimos una fuerza repulsiva explosiva y destruimos la bomba
         if (collision.gameObject.tag == "Character")
         {
             NavMeshAgent nvEnemy = collision.gameObject.transform.parent.Find("EnemyNavMesh").GetComponent<NavMeshAgent>();

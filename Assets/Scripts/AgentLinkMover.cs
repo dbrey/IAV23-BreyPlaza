@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 
+// Codigo proporcionado por Unity:
+//https://github.com/Unity-Technologies/NavMeshComponents/blob/master/Assets/Examples/Scripts/AgentLinkMover.cs
+
 public enum OffMeshLinkMoveMethod
 {
     Teleport,

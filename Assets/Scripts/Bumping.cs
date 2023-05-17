@@ -11,6 +11,7 @@ public class Bumping : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        // Si chocamos con un personaje o el jugador, añadimos una fuerza de empuje al otro
         if (collision.gameObject.tag == "Character" || collision.gameObject.tag == "Player")
         {
             if(myNavMesh != null)
