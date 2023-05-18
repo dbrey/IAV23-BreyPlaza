@@ -61,7 +61,7 @@ Si esta "activo", persigue al jugador y actualiza la posicion de su componente f
 
 #### Componente: PlayerController
 
-Mueve al jugador segun el input, sumando fuerzas a su componente físico, que al ser una esfera, acaba rodando
+Mueve al jugador segun el input, sumando fuerzas a su componente físico, que al ser una esfera, acaba rodando. Este script se baso en el movimiento de vehículo de Mario Kart, cuyo enlace se encuentra en Referencias
 | Método  |  Descripción |
 |---------|---------|
 | Update | Actualiza la posicion del objeto usando la posicion de su componente físico, recibe todo el input y dependiendo de ello, actualiza el valor de la aceleración a aplicar |
@@ -99,5 +99,5 @@ Los recursos de terceros utilizados son de uso público / con atribución.
 - [Creatus - Pirate Pack](https://creatus.itch.io/creatus-pirate)
 - [Bumper Car V1](https://sketchfab.com/3d-models/bumper-car-05e53156ee874c60ab14f5405bd9f086)
 - [Bumper Car V2](https://sketchfab.com/3d-models/bumper-car-4b277e7d413648e8a1e3192b88a3f7d4)
-
+- [Movimiento Mario Kart](https://www.youtube.com/watch?v=Ki-tWT50cEQ)
 
