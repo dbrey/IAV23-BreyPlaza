@@ -7,7 +7,28 @@ public class Bumping : MonoBehaviour
 {
     public NavMeshAgent myNavMesh;
     public float bounceForce;
+    private float normalBounceForce;
+    private float timer;
 
+    private void Start()
+    {
+        normalBounceForce = bounceForce;
+    }
+
+    private void Update()
+    {
+        if(bounceForce > normalBounceForce)
+        {
+            if (timer > 0)
+                timer -= Time.deltaTime;
+            else
+            {
+                bounceForce = normalBounceForce;
+                GameManager.instance.returnToMusicLevel();
+            }
+                
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -22,5 +43,10 @@ public class Bumping : MonoBehaviour
             collision.gameObject.GetComponent<Rigidbody>().AddExplosionForce(bounceForce * 20, collision.contacts[0].point, 1.0f);
         }
         
+    }
+
+    public void startTimer(float t)
+    {
+        timer = t;
     }
 }

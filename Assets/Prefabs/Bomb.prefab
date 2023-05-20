@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd5c65e625d164d42ad9ed80d5d67211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceForce: 500
+  bounceForce: 600
   timer: 10
 --- !u!208 &2814674908172700822
 NavMeshObstacle:

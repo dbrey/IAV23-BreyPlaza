@@ -7,7 +7,9 @@ public class SceneChange : MonoBehaviour
 {
     public void goToScene(string nameScene)
     {
+        GameManager.instance.stopMusic();
         SceneManager.LoadScene(nameScene);
+        GameManager.instance.chooseMusic(nameScene);
     }
 
     public void quitApp()
