@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class RotateObstacle : MonoBehaviour
 {
-    public float rotateVel;
-
+    [SerializeField] float rotateVel;
 
     // Update is called once per frame
     void Update()

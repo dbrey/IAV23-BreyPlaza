@@ -8,14 +8,15 @@ public class PowerUp : MonoBehaviour
     [SerializeField] float AddForce;
     [SerializeField] float tPowerUp;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<Bumping>().bounceForce = AddForce;
-            collision.gameObject.GetComponent<Bumping>().startTimer(tPowerUp);
+            other.gameObject.GetComponent<Bumping>().bounceForce = AddForce;
+            other.gameObject.GetComponent<Bumping>().startTimer(tPowerUp);
             GameManager.instance.powerUpMusic();
             Destroy(this.gameObject);
         }
     }
+
 }

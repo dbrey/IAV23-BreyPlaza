@@ -6444,6 +6444,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4318264213757671328, guid: bad23c8d7d3c93242964f16166fe6908, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318264213757671328, guid: bad23c8d7d3c93242964f16166fe6908, type: 3}
       propertyPath: orthographic size
       value: 16
       objectReference: {fileID: 0}

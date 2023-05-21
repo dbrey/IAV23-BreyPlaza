@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject powerUp;
     private int nButtonsDown;
     private bool allPushed;
+    bool gotPowerUp;
 
     [Header("Music")]
     [SerializeField] AudioClip menuClip;
@@ -37,16 +38,19 @@ public class GameManager : MonoBehaviour
     {
         chooseMusic(SceneManager.GetActiveScene().name);
         nButtonsDown = 0;
+        gotPowerUp = false;
     }
 
     public void powerUpMusic()
     {
+        gotPowerUp = true;
         musica.clip = powerUpClip;
         musica.Play();
     }
 
     public void returnToMusicLevel()
     {
+        gotPowerUp = false;
         musica.clip = savedClip;
         musica.Play();
     }
@@ -96,5 +100,10 @@ public class GameManager : MonoBehaviour
     public bool getStatusButtons()
     {
         return allPushed;
+    }
+
+    public bool isPowerUpActive()
+    {
+        return gotPowerUp;
     }
 }

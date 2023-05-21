@@ -31,9 +31,17 @@ public class EnemyController : MonoBehaviour
             // Posicionamos el rigidbody e impedimos que se gire.
             myRBObject.transform.position = myNavMeshObject.transform.position + new Vector3(0, 1.2f, 0);
             myRBObject.GetComponent<Rigidbody>().freezeRotation = true;
-            
-            if(myNavMeshObject.GetComponent<NavMeshAgent>().isOnNavMesh)
-                myNavMeshObject.GetComponent<NavMeshAgent>().SetDestination(dest.position);
+
+            if (myNavMeshObject.GetComponent<NavMeshAgent>().isOnNavMesh)
+            {
+                if (GameManager.instance.isPowerUpActive())
+                {
+                    Vector3 posToRun = -(transform.position + dest.transform.position);
+                    myNavMeshObject.GetComponent<NavMeshAgent>().SetDestination(posToRun);
+                }
+                else
+                    myNavMeshObject.GetComponent<NavMeshAgent>().SetDestination(dest.position);
+            }
         }
         else
         {
