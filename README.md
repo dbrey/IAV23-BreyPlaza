@@ -43,6 +43,9 @@ Si choca con otra bomba, ambas desaparecerán, pero si choca con un enemigo o el
 #### Componente: Bumping
 
 Si choca con un enemigo o el jugador, se aplicara al objeto con el que se haya chocado una cierta fuerza hacia atrás (dicha fuerza se puede cambiar en el Editor de Unity)
+| Método  |  Descripción |
+|---------|---------|
+| Update | (Solo se aplicara para el jugador) Si su fuerza de choque se altera, empieza un temporizador, que cuando se acaba, se devuelve a su valor original |
 
 #### Componente: CamFollow
 
@@ -72,9 +75,36 @@ Mueve al jugador segun el input, sumando fuerzas a su componente físico, que al
 
 Si el jugador choca con cualquier objeto con este componente, se traslada su posicion a una a elegir desde el editor de Unity. Si es otro objeto es automaticamente destruido
 
+#### Componente: GameManager
+
+Principalmente esta pensado para manejar el audio de cada mapa y el audio del powerup, pero tambien tiene unos metodos para manejar los powerUps
+| Método  |  Descripción |
+|---------|---------|
+| pushButton | Se da por pulsado un boton, y si X numero de botones se han pulsado, se crea un nuevo powerup |
+
+#### Componente: PinballObstacle
+
+Tiene un temporizador, que al llegar a 0, sale se mueve a una velocidad predeterminada hasta una rotacion maxima. Una vez llega a esa rotacion, vuelve poco a poco a su rotacion original y cuando termina, reinicia el temporizador
+
+#### Componente: PowerUp
+
+Si choca con el jugador, se aumenta su fuerza de choque y se inicia el temporizador para que se acabe su powerup. Justo después se destruye
+
+#### Componente: PushButton
+
+Al chocar con el jugador se informa al GameManager de que ha sido pulsado. Esto solo puede ocurrir una vez por partida
+
+#### Componente: RotateObstacle
+
+Rota de forma continua a su objeto a una velocidad predeterminada
+
+#### Componente: UIManager
+
+Actualiza sus textos cuando un personaje es noqueado fuera del escenario
+
 ## Pruebas y métricas
             
-Video de la práctica : 
+Video de la práctica : https://youtu.be/zBwTgZW3GRc
 
 ## Producción
 
@@ -89,7 +119,11 @@ Video de la práctica :
 | x | Cañon y bombas | 15-5-2023 |
 | x | Salto Jugador | 17-5-2023 |
 | x | Creación de la documentación | 17-5-2023 |
-| x | Propuesta, descripción de los mapas y del código| 18-5-2023 |
+| x | Propuesta, descripción de los mapas y del código | 18-5-2023 |
+| x | Mapa 3 creado | 18-5-2023 |
+| x | Power Up, GameManager, Menu, audios y mapa 3 modificado | 20-5-2023|
+| x | Huida de enemigos y obstáculo de pinball | 21-5-2023 |
+| x | Texto de noqueos y documentación actualizada | 24-5-2023 |
 
 ## Referencias
 
