@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5456003821848385245}
   - component: {fileID: 7805698957549675031}
   - component: {fileID: 5456003821848385244}
+  - component: {fileID: 1558338489610940194}
   - component: {fileID: 8904457012683751061}
   - component: {fileID: 8904457012683751060}
   - component: {fileID: 8904457012683751063}
@@ -103,6 +104,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateVel: 30
+--- !u!114 &1558338489610940194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8598380663488185282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15314ab6e6baa074a94e97a73bf9365a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myNavMesh: {fileID: 0}
+  bounceForce: 200
 --- !u!54 &8904457012683751061
 Rigidbody:
   m_ObjectHideFlags: 0

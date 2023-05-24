@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioClip map2Clip;
     [SerializeField] AudioClip map3Clip;
     [SerializeField] AudioClip powerUpClip;
+   
     AudioClip savedClip;
     AudioSource musica;
 
@@ -106,4 +107,5 @@ public class GameManager : MonoBehaviour
     {
         return gotPowerUp;
     }
+    
 }

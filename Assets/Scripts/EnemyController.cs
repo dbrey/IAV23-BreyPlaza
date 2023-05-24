@@ -42,11 +42,18 @@ public class EnemyController : MonoBehaviour
                 else
                     myNavMeshObject.GetComponent<NavMeshAgent>().SetDestination(dest.position);
             }
+            else
+                myNavMeshObject.GetComponent<NavMeshAgent>().enabled = false;
+
         }
         else
         {
             //Movemos el objeto navmesh y la malla donde se dirija el rigidbody
             myNavMeshObject.transform.position = myRBObject.transform.position - new Vector3(0, 1.2f, 0);
+
+            // El warp solo funciona si donde lo teletransportas, hay un navmesh
+            myNavMeshObject.GetComponent<NavMeshAgent>().Warp(myNavMeshObject.transform.position);
+            
             myRBObject.GetComponent<Rigidbody>().freezeRotation = false;
            
             // Temporizador para "reactivar" el NavMeshAgent
@@ -57,6 +64,12 @@ public class EnemyController : MonoBehaviour
             }
             else timer -= Time.deltaTime;
         }        
+    }
+
+    public void resetEnemy()
+    {
+        myNavMeshObject.transform.position = myRBObject.transform.position - new Vector3(0, 1.2f, 0);
+        myNavMeshObject.GetComponent<NavMeshAgent>().Warp(myNavMeshObject.transform.position);
     }
 
 }

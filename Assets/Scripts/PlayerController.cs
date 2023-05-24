@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Transform kartModel;
     public Transform kartNormal;
     public Rigidbody sphere;
 
